@@ -1,31 +1,33 @@
+let samplepath = '/SFZ-Samples/Sonatina Symphonic Orchestra/Samples/'
+
 const SAMPLE_LIBRARY = {
   'Grand Piano': [
-    { note: 'A',  octave: 4, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-a4.wav' },
-    { note: 'A',  octave: 5, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-a5.wav' },
-    { note: 'A',  octave: 6, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-a6.wav' },
-    { note: 'C',  octave: 4, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-c4.wav' },
-    { note: 'C',  octave: 5, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-c5.wav' },
-    { note: 'C',  octave: 6, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-c6.wav' },
-    { note: 'D#',  octave: 4, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-d#4.wav' },
-    { note: 'D#',  octave: 5, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-d#5.wav' },
-    { note: 'D#',  octave: 6, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-d#6.wav' },
-    { note: 'F#',  octave: 4, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-f#4.wav' },
-    { note: 'F#',  octave: 5, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-f#5.wav' },
-    { note: 'F#',  octave: 6, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Grand Piano/piano-f-f#6.wav' }
+    { note: 'A',  octave: 4, file: `${samplepath}Grand Piano/piano-f-a4.wav` },
+    { note: 'A',  octave: 5, file: `${samplepath}Grand Piano/piano-f-a5.wav` },
+    { note: 'A',  octave: 6, file: `${samplepath}Grand Piano/piano-f-a6.wav` },
+    { note: 'C',  octave: 4, file: `${samplepath}Grand Piano/piano-f-c4.wav` },
+    { note: 'C',  octave: 5, file: `${samplepath}Grand Piano/piano-f-c5.wav` },
+    { note: 'C',  octave: 6, file: `${samplepath}Grand Piano/piano-f-c6.wav` },
+    { note: 'D#',  octave: 4, file: `${samplepath}Grand Piano/piano-f-d#4.wav` },
+    { note: 'D#',  octave: 5, file: `${samplepath}Grand Piano/piano-f-d#5.wav` },
+    { note: 'D#',  octave: 6, file: `${samplepath}Grand Piano/piano-f-d#6.wav` },
+    { note: 'F#',  octave: 4, file: `${samplepath}Grand Piano/piano-f-f#4.wav` },
+    { note: 'F#',  octave: 5, file: `${samplepath}Grand Piano/piano-f-f#5.wav` },
+    { note: 'F#',  octave: 6, file: `${samplepath}Grand Piano/piano-f-f#6.wav` }
   ],
   'Clarinet': [
-    { note: 'B',  octave: 3, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-b3.wav' },
-    { note: 'B',  octave: 4, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-b4.wav' },
-    { note: 'B',  octave: 5, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-b5.wav' },
-    { note: 'D',  octave: 3, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-d3.wav' },
-    { note: 'D',  octave: 4, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-d4.wav' },
-    { note: 'D',  octave: 5, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-d5.wav' },
-    { note: 'F',  octave: 3, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-f3.wav' },
-    { note: 'F',  octave: 4, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-f4.wav' },
-    { note: 'F',  octave: 5, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-f5.wav' },
-    { note: 'G#',  octave: 3, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-g#3.wav' },
-    { note: 'G#',  octave: 4, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-g#4.wav' },
-    { note: 'G#',  octave: 5, file: 'SFZ-Samples/Sonatina Symphonic Orchestra/Samples/Clarinet/clarinet-g#5.wav' }
+    { note: 'B',  octave: 3, file: `${samplepath}Clarinet/clarinet-b3.wav` },
+    { note: 'B',  octave: 4, file: `${samplepath}Clarinet/clarinet-b4.wav` },
+    { note: 'B',  octave: 5, file: `${samplepath}Clarinet/clarinet-b5.wav` },
+    { note: 'D',  octave: 3, file: `${samplepath}Clarinet/clarinet-d3.wav` },
+    { note: 'D',  octave: 4, file: `${samplepath}Clarinet/clarinet-d4.wav` },
+    { note: 'D',  octave: 5, file: `${samplepath}Clarinet/clarinet-d5.wav` },
+    { note: 'F',  octave: 3, file: `${samplepath}Clarinet/clarinet-f3.wav` },
+    { note: 'F',  octave: 4, file: `${samplepath}Clarinet/clarinet-f4.wav` },
+    { note: 'F',  octave: 5, file: `${samplepath}Clarinet/clarinet-f5.wav` },
+    { note: 'G#',  octave: 3, file: `${samplepath}Clarinet/clarinet-g#3.wav` },
+    { note: 'G#',  octave: 4, file: `${samplepath}Clarinet/clarinet-g#4.wav` },
+    { note: 'G#',  octave: 5, file: `${samplepath}Clarinet/clarinet-g#5.wav` }
   ]
 };
 
@@ -131,11 +133,13 @@ fetchSample('AirportTerminal.wav').then(convolverBuffer => {
   gainNode.connect(audioContext.destination);
 
   // start different loops at different times, with different lengths
-  startLoop('Clarinet', 'F4',  convolver, 19.7/3, 4.0);
-  startLoop('Clarinet', 'Ab4', convolver, 17.8/3, 8.1);
+  playSample('Clarinet', 'C2', gainNode, 0);
+  startLoop('Grand Piano', 'Eb5',  gainNode, 0.5, 1.0);
+  startLoop('Grand Piano', 'Ab5',  gainNode, 0.6, 1.0);
+  /*startLoop('Clarinet', 'Ab4', convolver, 17.8/3, 8.1);
   startLoop('Clarinet', 'C5',  convolver, 21.3/3, 5.6);
   startLoop('Clarinet', 'Db5', convolver, 22.1/3, 12.6);
   startLoop('Clarinet', 'Eb5', convolver, 18.4/3, 9.2);
   startLoop('Clarinet', 'F5',  convolver, 20.0/3, 14.1);
-  startLoop('Clarinet', 'Ab5', convolver, 17.7/3, 3.1);
+  startLoop('Clarinet', 'Ab5', convolver, 17.7/3, 3.1);*/
 });
