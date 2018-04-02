@@ -4,6 +4,8 @@
   <script src="https://cdn.rawgit.com/mohayonao/web-audio-api-shim/master/build/web-audio-api-shim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
   <script src="audio-oscillator.js"></script>
+  <script src="note-to-frequency.js"></script>
+
 
   <!-- TRACKING CODE BEGINS -->
   <script src="../core/trackingjs/tracking.js-master/build/tracking-min.js"></script>
@@ -94,6 +96,8 @@
                 context.fillStyle = "#fff";
                 context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
                 context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+
+                notefreq = frequency(rect.x);
 
                 // play note if it exists in the notes dict
                 if (rect.x in notes) {

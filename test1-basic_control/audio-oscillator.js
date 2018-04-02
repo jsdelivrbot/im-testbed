@@ -21,6 +21,8 @@ var notes = {
     186: { noteName: 'E5', frequency: 659.3, keyName: ';' }
 };
 
+const OCTAVE = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+
 function Key(keyCode, noteName, keyName, frequency) {
     var keySound = new Sound(frequency, 'triangle');
     return { sound: keySound };
