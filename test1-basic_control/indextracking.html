@@ -54,39 +54,33 @@
 
       // Set tracker to listen for events
       tracker.on('track', function(event) {
+        // connect gainNode to audio out
+        gainNode.connect(audioContext.destination);
+
         context.clearRect(0, 0, canvas.width, canvas.height);
 
-          if (event.data.length === 0) {
-            // No colors were detected in this frame.
-          } else {
-            event.data.forEach(function(rect) {
-              console.log(rect.x, rect.y, rect.height, rect.width);
-              context.strokeStyle = '#a64ceb';
-              context.strokeRect(rect.x, rect.y, rect.width, rect.height);
-              context.font = '11px Helvetica';
-              context.fillStyle = "#fff";
-              context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
-              context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+          setInterval(function() {
 
-              // play note
-              fetchSample('AirportTerminal.wav').then(convolverBuffer => {
-                  // convolution reverb
-                  let convolver = audioContext.createConvolver();
-                  convolver.buffer = convolverBuffer;
-                  convolver.connect(gainNode);
-                  gainNode.connect(audioContext.destination);
+            if (event.data.length === 0) {
+              // No colors were detected in this frame.
+            } else {
+              event.data.forEach(function(rect) {
+                console.log(rect.x, rect.y, rect.height, rect.width);
+                context.strokeStyle = '#a64ceb';
+                context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+                context.font = '11px Helvetica';
+                context.fillStyle = "#fff";
+                context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+                context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
 
-                  // start different loops at different times, with different lengths
-                  // e.g. playSample('Clarinet', 'C2', gainNode, 0);
-                  //      startLoop('Grand Piano', 'Eb5',  gainNode, 0.5, 1.0);
-                  noterefresh = 2 // seconds
+                playSample('Clarinet', noteName(rect.x),  gainNode, 0, 10)
+              });
+            }
 
-                  playSample('Clarinet', noteName(rect.x),  gainNode, 0)
-                });
-            });
-          }
+          }, 2000
+          );
         });
-    
+
 
       // Function to draw rectangles, from face_hello_world.html
       window.plot = function(x, y, w, h) {
@@ -106,7 +100,22 @@
   <!-- THIS PLAYS STUFF -->
   <script>
       note = noteName(65);
+/*
+      fetchSample('AirportTerminal.wav').then(convolverBuffer => {
+          // convolution reverb
+          let convolver = audioContext.createConvolver();
+          convolver.buffer = convolverBuffer;
+          convolver.connect(gainNode);
+          gainNode.connect(audioContext.destination);
 
+          // start different loops at different times, with different lengths
+          // e.g. playSample('Clarinet', 'C2', gainNode, 0);
+          //      startLoop('Grand Piano', 'Eb5',  gainNode, 0.5, 1.0);
+          noterefresh = 2 // seconds
+
+          playSample('Clarinet', noteName(rect.x),  gainNode, 0)
+        });
+        */
   </script>
 
 </body>

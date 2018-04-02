@@ -123,6 +123,7 @@ function playSample(instrument, note, destination, delaySeconds = 0) {
   });
 }
 
+
 // set up loops - setInterval function executes given callback function with regular time interval
 // SEE MORE ABOUT PRECISE SCHEDULING:
 // https://www.html5rocks.com/en/tutorials/audio/scheduling/
