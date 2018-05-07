@@ -1,0 +1,54 @@
+<head>
+  <title>webaudio test</title>
+</head>
+
+<body>
+<!-- start/stop button -->
+<button style="display: block">Play/pause</button>
+<script src="http://webaudioapi.com/static/js/shared.js"></script>
+
+<script>
+  var RhythmSample = function() {
+    loadSounds(this, {
+      kick: 'samples/BD-ER1-808ish1.wav',
+      snare: 'samples/SD-ER1-70sSnareNice.wav',
+      hihat: 'samples/CLPZ-ER1-ClapHiFive.wav'
+    });
+  };
+
+  RhythmSample.prototype.play = function() {
+    // We'll start playing the rhythm 100 milliseconds from "now"
+    var startTime = context.currentTime + 0.100;
+    var tempo = 120; // BPM (beats per minute)
+    var eighthNoteTime = (60 / tempo) / 2;
+
+    // Play 2 bars of the following:
+    for (var bar = 0; bar < 2; bar++) {
+      var time = startTime + bar * 8 * eighthNoteTime;
+      // Play the bass (kick) drum on beats 1, 5
+      playSound(this.kick, time);
+      playSound(this.kick, time + 4 * eighthNoteTime);
+
+      // Play the snare drum on beats 3, 7
+      playSound(this.snare, time + 2 * eighthNoteTime);
+      playSound(this.snare, time + 6 * eighthNoteTime);
+
+      // Play the hi-hat every eighthh note.
+      for (var i = 0; i < 16; ++i) {
+        playSound(this.hihat, time + i * eighthNoteTime / 2);
+      }
+    }
+  };
+  </script>
+
+  <script>
+  // event listener for start/stop button
+    var sample = new RhythmSample();
+    document.querySelector('button').addEventListener('click', function() {
+    sample.play();
+    });
+
+  </script>
+
+
+</body>
