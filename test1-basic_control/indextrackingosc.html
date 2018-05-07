@@ -50,9 +50,24 @@
   </div>
 
   <script>
+    function closest (num, arr) {
+        var curr = arr[0];
+        var diff = Math.abs (num - curr);
+        for (var val = 0; val < arr.length; val++) {
+            var newdiff = Math.abs (num - arr[val]);
+            if (newdiff < diff) {
+                diff = newdiff;
+                curr = arr[val];
+            }
+        }
+        return curr;
+    }
+  </script>
+
+  <script>
       var notes = {
           65: { noteName: 'C4', frequency: 261.6, keyName: 'a' },
-          83: { noteName: 'D4', frequency: 293.7, keyName: 's' },
+          66: { noteName: 'D4', frequency: 293.7, keyName: 's' },
           68: { noteName: 'E4', frequency: 329.6, keyName: 'd' },
           70: { noteName: 'F4', frequency: 349.2, keyName: 'f' },
           71: { noteName: 'G4', frequency: 392, keyName: 'g' },
@@ -60,7 +75,7 @@
           74: { noteName: 'B4', frequency: 493.9, keyName: 'j' },
           75: { noteName: 'C5', frequency: 523.3, keyName: 'k' },
           76: { noteName: 'D5', frequency: 587.3, keyName: 'l' },
-          186: { noteName: 'E5', frequency: 659.3, keyName: ';' }
+          78: { noteName: 'E5', frequency: 659.3, keyName: ';' }
       };
 
       createKeyboard(notes);
@@ -100,10 +115,14 @@
                 notefreq = frequency(rect.x);
 
                 // play note if it exists in the notes dict
-                if (rect.x in notes) {
+                /*if (rect.x in notes) {
                   notes[rect.x].key.sound.playstop(500);
-                }
+                }*/
 
+                // play nearest note in notes
+                note_toplay = closest(rect.x, Object.keys(notes));
+                console.log(note_toplay);
+                notes[note_toplay].key.sound.playstop(200)
               });
             }
         });
